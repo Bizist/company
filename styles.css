@@ -1,0 +1,515 @@
+/* 기본 스타일 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Barun+Gothic:wght@400;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nanum Barun Gothic', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 전체 레이아웃 중앙 정렬 */
+.container {
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 중앙 정렬 */
+    padding: 0 20px; /* 양쪽 패딩 */
+}
+
+/* 헤더 스타일 */
+.header-banner {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    box-sizing: border-box; /* 패딩을 포함한 박스 크기 설정 */
+    position: relative; /* 상대 위치 */
+}
+
+.header-banner .logo {
+    position: absolute; /* 절대 위치 */
+    left: 10px; /* 좌측에 위치 */
+    height: 60px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 700; /* 글꼴 굵기 설정 */
+    padding-bottom: 5px; /* 밑줄 공간 */
+    transition: color 0.3s, border-bottom 0.3s; /* 호버 및 밑줄 애니메이션 */
+}
+
+.menu li a:hover,
+.menu li a.active {
+    color: #aaa; /* 호버 및 활성화 시 회색 */
+    border-bottom: 2px solid #333; /* 밑줄 */
+}
+
+.hamburger-menu {
+    position: absolute; /* 절대 위치 */
+    right: 10px; /* 우측에 위치 */
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px;
+    transition: 0.4s;
+}
+
+/* 메인 배너 스타일 */
+.main-banner {
+    position: relative;
+    text-align: center;
+    height: 300px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-banner img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.banner-text h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.banner-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* 설명 섹션 스타일 */
+.description {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1000px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* 기능 섹션 스타일 */
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 기본 4개의 항목 */
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1500px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 중앙 정렬을 위해 자동 마진 */
+    box-sizing: border-box;
+}
+
+.feature {
+    position: relative;
+    text-align: center;
+}
+
+.feature img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 명도를 낮추어 흰색 글씨가 잘 보이도록 */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* 텍스트 주변의 여백 추가 */
+    box-sizing: border-box; /* 패딩을 포함한 박스 크기 설정 */
+}
+
+#feature1 .overlay { background-color: rgba(0, 191, 255, 0.9); }
+#feature2 .overlay { background-color: rgba(0, 99, 255, 0.9); }
+#feature3 .overlay { background-color: rgba(0, 179, 113, 0.9); }
+#feature4 .overlay { background-color: rgba(255, 165, 0, 0.9); }
+
+.overlay h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.overlay p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    max-width: 80%; /* 텍스트 영역을 좁혀 여백을 추가 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* 회사 소개 섹션 스타일 */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.about-text {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 16px;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* 프로필 섹션 스타일 */
+.profiles {
+    padding: 30px 20px; /* 패딩을 줄입니다 */
+    margin-bottom: 10px; /* 섹션 간의 간격을 줄입니다 */
+    text-align: center;
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profiles h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3개씩 배치 */
+    gap: 10px; /* 간격을 줄입니다 */
+    justify-items: center;
+}
+
+.profile-item {
+    color: #2a69ac;
+    padding: 15px; /* 패딩 축소 */
+    text-align: center;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.profile-item img {
+    width: 80px; /* 프로필 이미지 크기 */
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: #ccc; /* 임시 배경색 */
+}
+
+/* 서비스 섹션 스타일 */
+.services {
+    padding: 40px 20px; /* 패딩을 약간 늘립니다 */
+    margin-bottom: 20px; /* 섹션 간의 간격을 약간 늘립니다 */
+    text-align: center;
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services h2 {
+    font-size: 32px; /* 제목 크기를 늘립니다 */
+    margin-bottom: 40px; /* 제목과 그리드 사이의 간격을 늘립니다 */
+    color: #2a69ac; /* 제목 색상을 변경합니다 */
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3개씩 배치 */
+    gap: 20px; /* 아이템 간의 간격을 늘립니다 */
+    justify-items: center;
+}
+
+.service-item {
+    color: #2a69ac;
+    padding: 20px; /* 패딩을 약간 늘립니다 */
+    width: 100%;
+    max-width: 500px; /* 최대 너비 설정 */
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #f0f0f0; /* 회색 배경 */
+    margin: 5px auto; /* 아이템 간 간격 */
+    border-radius: 10px; /* 약간 둥근 모서리 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 변형 및 그림자 효과 추가 */
+}
+
+.service-item:hover {
+    transform: translateY(-5px); /* 마우스 오버 시 약간 위로 올라가는 효과 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 마우스 오버 시 그림자 효과 증가 */
+}
+
+
+/* 지도 섹션 스타일 */
+.map {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px; /* 최대 너비 설정 */
+}
+
+.map-info {
+    flex: 1;
+    min-width: 300px;
+    padding-left: 20px; /* 좌측 패딩 */
+    text-align: center;
+    box-sizing: border-box; /* 패딩 포함 박스 크기 설정 */
+}
+
+.map-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.map-info p {
+    font-size: 16px;
+}
+
+.map-info table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.map-info table, .map-info th, .map-info td {
+    border: 1px solid #ddd;
+}
+
+.map-info th, .map-info td {
+    padding: 10px;
+    text-align: center;
+}
+
+.map-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.map-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.map-buttons a:hover {
+    background-color: #0056b3;
+}
+
+.map-buttons a.naver-map {
+    background-color: #2DB400; /* 네이버 지도 초록색 */
+    color: white;
+}
+
+.map-buttons a.kakao-map {
+    background-color: #FEE500; /* 카카오 지도 노란색 */
+    color: black;
+}
+
+/* 강조 텍스트 색상 변경 */
+.highlight {
+    color: #FF6347; /* 원하는 색상 코드로 변경 */
+}
+
+
+/* 푸터 스타일 */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1200px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr); /* 작은 화면에서는 두 줄로 표시 */
+    }
+}
+
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr; /* 작은 화면에서는 한 줄에 한 개의 항목 표시 */
+    }
+    .profile-grid, .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-banner {
+        flex-direction: row; /* row 유지 */
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        position: fixed; /* absolute 대신 fixed 사용 */
+        top: 80px;
+        left: 0;
+        text-align: center; /* 중앙 정렬 */
+        z-index: 1000; /* 메뉴가 다른 요소 위에 표시되도록 설정 */
+        transition: max-height 0.3s ease-out; /* 메뉴 애니메이션 */
+        max-height: 0; /* 초기 높이 설정 */
+        overflow: hidden;
+    }
+
+    .menu.active {
+        display: flex;
+        max-height: 500px; /* 메뉴 활성화 시 높이 설정 */
+    }
+
+    .menu li {
+        display: block;
+        margin: 0;
+    }
+
+    .menu li a {
+        padding: 10px;
+        display: block;
+        font-weight: 700; /* 글꼴 굵기 설정 */
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .main-banner {
+        height: auto;
+    }
+
+    .main-banner img {
+        height: auto;
+    }
+
+    .banner-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 10px;
+        color: #fff;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about-image img {
+        content: url('img/about_m.png');
+    }
+
+    .map {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .map-container,
+    .map-info {
+        width: 100%;
+    }
+}

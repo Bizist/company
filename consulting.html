@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT 컨설팅</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="consulting.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .consulting-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f7f7f7;
+        }
+
+        .consulting-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .consulting-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .consulting-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px;
+            max-width: 800px; 
+            margin: 40px auto 0 auto;
+        }
+
+        .consulting-item {
+            background-color: #4A90E2;
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px; 
+            font-weight: bold;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+            height: 120px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .consulting-item i {
+            font-size: 36px; 
+            margin-bottom: 10px; 
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 30px 0;
+        }
+
+        .diagram-container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+        }
+
+        .box {
+            position: absolute;
+            width: 120px;
+            height: 50px;
+            background-color: #4A90E2;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .box.pt-consulting { top: 10%; left: 50%; transform: translate(-50%, -50%); }
+        .box.business-plan { top: 70%; left: 20%; transform: translate(-50%, -50%); }
+        .box.ir-pitching { top: 70%; left: 80%; transform: translate(-50%, -50%); }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .arrow {
+            fill: none;
+            stroke: #4A90E2;
+            stroke-width: 2;
+            marker-end: url(#arrowhead);
+            marker-start: url(#arrowhead);
+        }
+
+        .final-section {
+            padding: 20px;
+            text-align: center;
+            background-color: #f7f7f7;
+        }
+
+        .final-section h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .final-section img {
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .final-section p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .management-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .management-section img {
+            max-width: 40%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .large-image {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .small-image {
+            max-width: 50%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="main-banner">
+        <img src="img/main.jpg" alt="메인 배너 이미지">
+        <div class="banner-text">
+            <h2>PT 컨설팅/경영컨설팅</h2>
+            <p>PT 컨설팅/경영컨설팅 안내</p>
+            <a href="#funds-description" class="btn" aria-label="더 알아보기">더 알아보기</a>
+        </div>
+    </section>
+
+    <main>
+        <section id="description" class="description container">
+            <h2>PT컨설팅이란 <span class="highlight"><br>회사의 상황 및 스토리를 더욱 개선하여 표현하도록<br>
+            </span>도움을 드리는 컨설팅입니다</h2>
+            <h1>발표자는 스토리라인과 연출 및 제스처를 연구하고<br>수정하며 더 나은 발표를 할 수 있습니다</h1>
+        </section>
+
+        <section class="consulting-section" id="consulting">
+            <h2>우리의 컨설팅 서비스</h2>
+            <p>PT 컨설팅은 귀사의 PT가 더욱 전문적이고 설득력 있게 전달되도록 다양한 컨설팅 서비스를 제공합니다.</p>
+
+            <div class="diagram-section">
+                <div class="diagram-container">
+                    <svg>
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" />
+                            </marker>
+                        </defs>
+                        <line x1="250" y1="30" x2="120" y2="210" class="arrow" />
+                        <line x1="250" y1="30" x2="380" y2="210" class="arrow" />
+                        <line x1="130" y1="210" x2="370" y2="210" class="arrow" />
+                    </svg>
+                    <div class="box pt-consulting">PT 컨설팅</div>
+                    <div class="box business-plan">사업계획서</div>
+                    <div class="box ir-pitching">투자 IR 피칭</div>
+                </div>
+            </div>
+
+            <div class="consulting-grid">
+                <div class="consulting-item">
+                    <i class="fas fa-chart-line"></i>
+                    투자를 준비하고 있는 대표님
+                </div>
+                <div class="consulting-item">
+                    <i class="fas fa-bullhorn"></i>
+                    회사를 잘 표현하고 싶은 대표님
+                </div>
+                <div class="consulting-item">
+                    <i class="fas fa-star"></i>
+                    타회사와 차별성을 갖고 싶은 대표님
+                </div>
+                <div class="consulting-item">
+                    <i class="fas fa-microphone-alt"></i>
+                    발표가 두려운 대표님
+                </div>
+            </div>
+        </section>
+        
+        <section id="description" class="description container">
+            <h2>PT 컨설팅을 통해 경쟁력, 차별성을 갖고 <br>
+                사업계획서 / 투자계획서를 만드는 결과는      
+                <span class="highlight">
+                    10억 이상의 가치가 있습니다.
+                </span>
+            </h2>
+        </section>       
+
+        <section class="value-section">
+            <div class="value-container">
+                <div class="value-points">
+                    <div class="value-point">
+                        <i class="fas fa-check-circle"></i> 앞으로의 예상문제점 및 해결점 제시!
+                    </div>
+                    <div class="value-point">
+                        <i class="fas fa-check-circle"></i> 너무 긴 내용은 NO! 시각화 자료를 통한 핵심내용 각인!
+                    </div>
+                    <div class="value-point">
+                        <i class="fas fa-check-circle"></i> 과장된 표현, 신빙성 없는 수치표기는 NO!
+                    </div>
+                    <div class="value-point">
+                        <i class="fas fa-check-circle"></i> 지금까지의 성과보다는 미래의 잠재 가능성 위주 작성!
+                    </div>
+                    <div class="value-point">
+                        <i class="fas fa-check-circle"></i> 오직 우리 기업만이 해낼 수 있다는 차별 아이디어 어필!
+                    </div>
+                    <div class="value-point">
+                        <i class="fas fa-check-circle"></i> 어려운 기술 전문지식 설명보다는 사업 구체화 방향을 표현!
+                    </div>
+                </div>
+                <div class="value-summary">
+                    <p>대표님이 혼자 하기 어려운<br>기획 / 전략<br>회사의 색과 강점을 살릴 수 있도록<br>'가치 있는'<br>결과를 만들어 드립니다.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="final-section">
+            <h2>경영컨설팅이 필요한 이유</h2>
+            <p>기업은 다양한 재무적, 세무적 RISK를 갖고 있습니다.<br>
+               그를 방지하고 사업이 원활하게 운영될 수 있도록 돕는 영역이 '경영컨설팅'입니다.</p>
+            <img src="img/consulting.png" alt="경영컨설팅 이미지" class="large-image">
+        </section>
+
+        <section class="management-section">
+            <img src="img/consulting2.png" alt="경영컨설팅 이미지" class="small-image">
+        </section>
+        
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+    <script src="loadHtml.js"></script>
+</body>
+</html>
