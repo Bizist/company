@@ -260,6 +260,38 @@ nav {
     grid-template-columns: repeat(3, 1fr); /* 3개씩 배치 */
     gap: 10px; /* 간격을 줄입니다 */
     justify-items: center;
+    grid-template-areas:
+        ". special ."
+        "a b c"
+        "d e f";
+}
+
+.profile-item.special {
+    grid-area: special;
+}
+
+.profile-item:nth-child(2) {
+    grid-area: a;
+}
+
+.profile-item:nth-child(3) {
+    grid-area: b;
+}
+
+.profile-item:nth-child(4) {
+    grid-area: c;
+}
+
+.profile-item:nth-child(5) {
+    grid-area: d;
+}
+
+.profile-item:nth-child(6) {
+    grid-area: e;
+}
+
+.profile-item:nth-child(7) {
+    grid-area: f;
 }
 
 .profile-item {
@@ -271,12 +303,15 @@ nav {
 }
 
 .profile-item img {
-    width: 80px; /* 프로필 이미지 크기 */
-    height: 80px;
-    border-radius: 50%;
+    width: 150px; /* 프로필 이미지 너비 */
+    height: 150px; /* 프로필 이미지 높이 */
+    object-fit: cover; /* 이미지의 일부를 잘라서 크기를 맞춤 */
+    object-position: top; /* 이미지의 상단 부분을 유지 */
+    border-radius: 0; /* 둥근 모서리를 제거하여 네모로 만듭니다 */
     margin-bottom: 10px;
     background-color: #ccc; /* 임시 배경색 */
 }
+
 
 /* 서비스 섹션 스타일 */
 .services {

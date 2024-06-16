@@ -8,6 +8,103 @@
     <link rel="stylesheet" href="consulting.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #4A90E2;
+            color: white;
+            padding: 20px 0;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px 0;
+        }
+
+        .section {
+            width: 45%;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section ul li {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+        }
+
+        .details {
+            margin-top: 20px;
+        }
+
+        .detail-item {
+            background-color: #faf8e0; /* 배경색 변경 */
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .detail-item h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .detail-item p {
+            margin: 0;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .detail-item:hover {
+            background-color: #f2e3b2; /* 배경색 변경 */
+        }
+
         .consulting-section {
             padding: 50px 20px;
             text-align: center;
@@ -148,6 +245,88 @@
             max-width: 50%;
             height: auto;
         }
+
+        /* 추가된 스타일 */
+        .text-diagram-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .button-container button {
+            background-color: #fafafa; /* 배경색 변경 */
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            outline: none;
+            transition: 0.4s;
+            font-size: 18px;
+            border-radius: 5px;
+            flex: 1 1 calc(25% - 20px);
+            box-sizing: border-box;
+            min-width: 200px;
+        }
+
+        .button-container button:hover {
+            background-color: #f2e3b2; /* 배경색 변경 */
+        }
+
+        .description-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .description {
+            display: none;
+            width: 100%;
+            max-width: 800px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .description.show {
+            display: block;
+        }
+
+        table {
+            width: 100%; /* 테이블도 가로로 넓게 */
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        @media (max-width: 768px) {
+            .button-container button {
+                flex: 1 1 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -158,17 +337,11 @@
         <div class="banner-text">
             <h2>PT 컨설팅/경영컨설팅</h2>
             <p>PT 컨설팅/경영컨설팅 안내</p>
-            <a href="#funds-description" class="btn" aria-label="더 알아보기">더 알아보기</a>
+            <a href="#consulting" class="btn" aria-label="더 알아보기">더 알아보기</a>
         </div>
     </section>
 
     <main>
-        <section id="description" class="description container">
-            <h2>PT컨설팅이란 <span class="highlight"><br>회사의 상황 및 스토리를 더욱 개선하여 표현하도록<br>
-            </span>도움을 드리는 컨설팅입니다</h2>
-            <h1>발표자는 스토리라인과 연출 및 제스처를 연구하고<br>수정하며 더 나은 발표를 할 수 있습니다</h1>
-        </section>
-
         <section class="consulting-section" id="consulting">
             <h2>우리의 컨설팅 서비스</h2>
             <p>PT 컨설팅은 귀사의 PT가 더욱 전문적이고 설득력 있게 전달되도록 다양한 컨설팅 서비스를 제공합니다.</p>
@@ -250,13 +423,161 @@
         
         <section class="final-section">
             <h2>경영컨설팅이 필요한 이유</h2>
-            <p>기업은 다양한 재무적, 세무적 RISK를 갖고 있습니다.<br>
-               그를 방지하고 사업이 원활하게 운영될 수 있도록 돕는 영역이 '경영컨설팅'입니다.</p>
-            <img src="img/consulting.png" alt="경영컨설팅 이미지" class="large-image">
+            <div class="management-section">
+                <div class="container">
+                    <div class="header">
+                        <h1>중소기업 경영지원서비스</h1>
+                    </div>
+                    <div class="content">
+                        <div class="section" id="사업개시">
+                            <h2>사업 개시</h2>
+                            <ul>
+                                <li>법인설립</li>
+                                <li>기업체질정비</li>
+                            </ul>
+                        </div>
+                        <div class="section" id="사업성장">
+                            <h2>사업 성장</h2>
+                            <ul>
+                                <li>인증</li>
+                                <li>주식상장</li>
+                            </ul>
+                        </div>
+                        <div class="section" id="사업안정화">
+                            <h2>사업 안정화</h2>
+                            <ul>
+                                <li>이익관리</li>
+                                <li>세무관리</li>
+                            </ul>
+                        </div>
+                        <div class="section" id="사업승계">
+                            <h2>사업 승계</h2>
+                            <ul>
+                                <li>경영승계</li>
+                                <li>상속관련 조치</li>
+                            </ul>
+                        </div>
+                        <div class="details">
+                            <div class="detail-item">
+                                <h2>법인설립</h2>
+                                <p>개인사업자 법인전환: 사업양도 양수도, 사업합병 및 분할, 대주주 주식양도양수</p>
+                            </div>
+                            <div class="detail-item">
+                                <h2>기업체질정비</h2>
+                                <p>정관작성, 주식현황 정비, 등기부 수정, 임원진 감사의 워크숍, 퇴직금/성과급/배당금 조정, 지배구조 재정비, 기업자문 위원회 설치</p>
+                            </div>
+                            <div class="detail-item">
+                                <h2>인증</h2>
+                                <p>기술혁신형 중소기업, 연구개발서비스업, 벤처기업, 녹색기술 인증, 이노비즈 인증</p>
+                            </div>
+                            <div class="detail-item">
+                                <h2>주식상장</h2>
+                                <p>코스닥, 코넥스, 코스피</p>
+                            </div>
+                            <div class="detail-item">
+                                <h2>이익관리</h2>
+                                <p>매출원가 분석, 매출 채권 관리, 재고자산 관리</p>
+                            </div>
+                            <div class="detail-item">
+                                <h2>세무관리</h2>
+                                <p>기업세무진단, 법인세 절세방안, 재무제표 분석</p>
+                            </div>
+                            <div class="detail-item">
+                                <h2>경영승계</h2>
+                                <p>주식 증여, 지분 양도, 가업 승계 계획</p>
+                            </div>
+                            <div class="detail-item">
+                                <h2>상속관련 조치</h2>
+                                <p>상속세 사전 계획, 가업상속 공제, 창업지원</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="management-section">
-            <img src="img/consulting2.png" alt="경영컨설팅 이미지" class="small-image">
+        <!-- 텍스트 다이어그램 설명 섹션 추가 -->
+        <section class="text-diagram-section">
+            <div class="container">
+                <div class="header">
+                    <h1>투자와 경영 설명</h1>
+                </div>
+                <div class="button-container">
+                    <button onclick="showDescription('owner')">오너 설명</button>
+                    <button onclick="showDescription('ceo')">CEO 설명</button>
+                    <button onclick="showDescription('corporation')">법인 설명</button>
+                </div>
+                <div class="description-container">
+                    <div id="owner" class="description">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="2">오너</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>배당정책 수립</td>
+                                </tr>
+                                <tr>
+                                    <td>자기주식</td>
+                                </tr>
+                                <tr>
+                                    <td>지속적 배당</td>
+                                </tr>
+                                <tr>
+                                    <td>이익소각</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="ceo" class="description">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="2">CEO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>매년 적정보수 책정</td>
+                                </tr>
+                                <tr>
+                                    <td>무형자산 활용</td>
+                                </tr>
+                                <tr>
+                                    <td>퇴직금 적립</td>
+                                </tr>
+                                <tr>
+                                    <td>리스크 축소</td>
+                                </tr>
+                                <tr>
+                                    <td>사내근로복지기금</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="corporation" class="description">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="2">법인</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>투자 (비용 아님, 소득세 있음): 배당, 감자대가, 자기주식 매각/소각 (배당소득, 양도소득)</td>
+                                </tr>
+                                <tr>
+                                    <td>경영 (조건충족 시 비용, 소득세 있음): 보수 (근로소득, 퇴직소득)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </section>
         
     </main>
@@ -265,5 +586,14 @@
 
     <script src="script.js"></script>
     <script src="loadHtml.js"></script>
+    <script>
+        function showDescription(id) {
+            const descriptions = document.querySelectorAll('.description');
+            descriptions.forEach(description => {
+                description.classList.remove('show');
+            });
+            document.getElementById(id).classList.add('show');
+        }
+    </script>
 </body>
 </html>
