@@ -1,12 +1,12 @@
 /* 기본 스타일 */
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Barun+Gothic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Nanum Barun Gothic', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff; /* 페이지 배경을 흰색으로 */
@@ -37,7 +37,7 @@ body {
 .header-banner .logo {
     position: absolute; /* 절대 위치 */
     left: 10px; /* 좌측에 위치 */
-    height: 30px; /* 높이를 원하는 크기로 설정 */
+    height: 50px; /* 높이를 원하는 크기로 설정 */
     width: auto; /* 비율을 유지하면서 너비 자동 조정 */
 }
 
@@ -63,6 +63,7 @@ nav {
     text-decoration: none;
     font-weight: 700; /* 글꼴 굵기 설정 */
     padding-bottom: 5px; /* 밑줄 공간 */
+    font-size: 18px; /* 글씨 크기 설정 */
     transition: color 0.3s, border-bottom 0.3s; /* 호버 및 밑줄 애니메이션 */
 }
 
@@ -148,15 +149,58 @@ nav {
     max-width: 1000px;
     font-size: 18px;
     line-height: 1.6;
+    position: relative; /* 로고 위치를 위해 상대 위치 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.description-logo {
+    position: relative;
+    top: 0;
+    transform: translateY(0);
+    max-width: 300px; /* 로고 최대 너비 */
+    margin-bottom: 20px; /* 로고와 텍스트 사이 간격 */
+}
+
+.description-text {
+    color: #003366; /* 남색 텍스트 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    max-width: 800px; /* 텍스트 영역 너비 */
+}
+
+.description h2, .description h1 {
+    margin: 10px 0;
 }
 
 .highlight {
     color: #FF6347; /* 강조 텍스트 색상 */
 }
 
-.emphasize {
-    color: #e74c3c;
-    font-weight: bold;
+.about-image {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.about-desktop {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-mobile {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .about-desktop {
+        display: none;
+    }
+    .about-mobile {
+        display: block;
+    }
 }
 
 /* 기능 섹션 스타일 */
@@ -205,14 +249,43 @@ nav {
 
 .overlay h2 {
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 28px; /* 글자 크기 증가 */
 }
 
 .overlay p {
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 20px; /* 글자 크기 증가 */
     max-width: 80%; /* 텍스트 영역을 좁혀 여백을 추가 */
     text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* 호출 동작 버튼 스타일 */
+.call-to-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto; /* auto로 중앙 정렬 */
+    width: 100%;
+}
+
+.btn-large {
+    background-color: #003366;
+    color: white;
+    padding: 25px; /* 패딩을 늘려서 버튼을 더 크게 만듦 */
+    margin: 10px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 24px; /* 글씨 크기 증가 */
+    width: 100%; /* 버튼 너비를 100%로 설정 */
+    max-width: 800px; /* 최대 너비 설정 */
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-large:hover {
+    background-color: #1a3d7c; /* 연한 남색으로 변경 */
+    color: white; /* 글씨 색상 유지 */
 }
 
 /* 회사 소개 섹션 스타일 */
@@ -271,58 +344,45 @@ nav {
 
 .profile-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3개씩 배치 */
-    gap: 10px; /* 간격을 줄입니다 */
-    justify-items: center;
-    grid-template-areas:
-        ". special ."
-        "a b c"
-        "d e f";
-}
-
-.profile-item.special {
-    grid-area: special;
-}
-
-.profile-item:nth-child(2) {
-    grid-area: a;
-}
-
-.profile-item:nth-child(3) {
-    grid-area: b;
-}
-
-.profile-item:nth-child(4) {
-    grid-area: c;
-}
-
-.profile-item:nth-child(5) {
-    grid-area: d;
-}
-
-.profile-item:nth-child(6) {
-    grid-area: e;
-}
-
-.profile-item:nth-child(7) {
-    grid-area: f;
+    grid-template-columns: repeat(2, 1fr); /* 2열 레이아웃 */
+    gap: 20px; /* 간격을 추가합니다 */
 }
 
 .profile-item {
-    color: #003366; /* 남색 텍스트 */
-    padding: 15px; /* 패딩 축소 */
-    text-align: center;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 중앙 정렬 */
+    background-color: #f9f9f9; /* 배경색 추가 */
+    padding: 20px; /* 패딩 추가 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 */
 }
 
-.profile-item img {
-    width: 150px; /* 프로필 이미지 너비 */
-    height: 150px; /* 프로필 이미지 높이 */
+.profile-image img {
+    width: 200px; /* 프로필 이미지 너비 */
+    height: 300px; /* 프로필 이미지 높이 */
     object-fit: cover; /* 이미지의 일부를 잘라서 크기를 맞춤 */
-    object-position: top; /* 이미지의 상단 부분을 유지 */
-    border-radius: 0; /* 네모 형태 */
-    margin-bottom: 10px;
-    background-color: #ccc; /* 임시 배경색 */
+    border-radius: 10px; /* 이미지 모서리 둥글게 */
+    margin-bottom: 20px;
+}
+
+.profile-details {
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.profile-details p {
+    margin: 5px 0;
+}
+
+.profile-details ul {
+    list-style: none; /* 목록 스타일 제거 */
+    padding: 0; /* 패딩 제거 */
+    margin: 0; /* 마진 제거 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+.profile-details ul li {
+    margin-bottom: 5px; /* 목록 항목 간격 추가 */
 }
 
 /* 서비스 섹션 스타일 */

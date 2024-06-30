@@ -207,12 +207,12 @@ nav {
 
 .funds-box .overlay h2 {
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 28px; /* 글자 크기 증가 */
 }
 
 .funds-box .overlay p {
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 20px; /* 글자 크기 증가 */
     max-width: 80%;
     text-align: center;
 }
@@ -221,6 +221,7 @@ nav {
 #funds2 .overlay { background-color: rgba(0, 51, 102, 0.9); } /* 남색 계열 */
 #funds3 .overlay { background-color: rgba(0, 102, 153, 0.9); } /* 남색 계열 */
 #funds4 .overlay { background-color: rgba(0, 153, 204, 0.9); } /* 남색 계열 */
+
 
 /* 계약 프로세스 섹션 스타일 */
 .contract-process {
