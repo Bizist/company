@@ -372,12 +372,13 @@ nav {
 
 .profile-details p {
     margin: 5px 0;
+    font-weight: bold; /* 볼드 처리 */
 }
 
 .profile-details ul {
     list-style: none; /* 목록 스타일 제거 */
     padding: 0; /* 패딩 제거 */
-    margin: 0; /* 마진 제거 */
+    margin: 20px 0 0 0; /* 위쪽에 간격 추가 */
     text-align: left; /* 텍스트 왼쪽 정렬 */
 }
 
