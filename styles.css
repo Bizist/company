@@ -1,107 +1,61 @@
-/* 기본 스타일 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-
-html {
-    scroll-behavior: smooth;
-}
-
+/* 기존 CSS 코드 포함 */
 body {
-    font-family: 'Noto Sans', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #fff; /* 페이지 배경을 흰색으로 */
-    color: #333;
+    font-family: Arial, sans-serif;
+    background-color: white; /* 일반 배경색 흰색으로 설정 */
 }
 
-/* 전체 레이아웃 중앙 정렬 */
-.container {
-    max-width: 1200px; /* 최대 너비 설정 */
-    margin: 0 auto; /* 중앙 정렬 */
-    padding: 0 20px; /* 양쪽 패딩 */
-}
-
-/* 헤더 스타일 */
-.header-banner {
-    background-color: #fff; /* 흰색 배경 */
-    color: #333; /* 텍스트 색상 */
-    padding: 10px;
-    display: flex;
-    justify-content: center; /* 중앙 정렬 */
-    align-items: center;
-    height: 80px;
-    width: 100%;
-    box-sizing: border-box; /* 패딩을 포함한 박스 크기 설정 */
-    position: relative; /* 상대 위치 */
-}
-
-.header-banner .logo {
-    position: absolute; /* 절대 위치 */
-    left: 10px; /* 좌측에 위치 */
-    height: 50px; /* 높이를 원하는 크기로 설정 */
-    width: auto; /* 비율을 유지하면서 너비 자동 조정 */
-}
-
-nav {
+header {
     display: flex;
     align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px 40px;
+    position: relative;
 }
 
-.menu {
+.logo {
+    height: 40px;
+    position: absolute;
+    left: 20px;
+}
+
+nav ul {
     list-style-type: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
 }
 
-.menu li {
-    display: inline;
-    margin-right: 20px;
+nav ul li {
+    margin-left: 20px;
 }
 
-.menu li a {
-    color: #333;
+nav ul li a {
+    color: black;
     text-decoration: none;
-    font-weight: 700; /* 글꼴 굵기 설정 */
-    padding-bottom: 5px; /* 밑줄 공간 */
-    font-size: 18px; /* 글씨 크기 설정 */
-    transition: color 0.3s, border-bottom 0.3s; /* 호버 및 밑줄 애니메이션 */
+    font-size: 18px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
 }
 
-.menu li a:hover,
-.menu li a.active {
-    color: #aaa; /* 호버 및 활성화 시 회색 */
-    border-bottom: 2px solid #333; /* 밑줄 */
+nav ul li a:hover,
+nav ul li a.active {
+    border-bottom: 3px solid black;
 }
 
-.hamburger-menu {
-    position: absolute; /* 절대 위치 */
-    right: 10px; /* 우측에 위치 */
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger-menu span {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 4px;
-    transition: 0.4s;
-}
-
-/* 메인 배너 스타일 */
 .main-banner {
     position: relative;
-    text-align: center;
-    height: 300px;
     width: 100%;
-    box-sizing: border-box;
+    height: 600px;
+    overflow: hidden;
 }
 
 .main-banner img {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
+    filter: brightness(70%);
 }
 
 .banner-text {
@@ -109,514 +63,417 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
-    border-radius: 10px;
-    /* background-color: rgba(0, 0, 51, 0.7); 배경 제거 */
-    color: #fff;
+    color: white;
+    text-align: center;
 }
 
-.banner-text h2 {
+.banner-text h1 {
+    margin: 0;
+    font-size: 48px;
+}
+
+.banner-text p {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.learn-more {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px; /* 버튼의 마진을 추가 */
+}
+
+.learn-more.white-border {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.learn-more.white-border:hover {
+    background-color: white;
+    color: #007BFF;
+}
+
+.content {
+    padding: 20px;
+    background-color: white; /* 섹션 배경색 흰색으로 설정 */
+}
+
+.content .post {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.content .post .bizist-title {
+    font-size: 40px; /* 원하는 크기로 조정 */
+    color: darkblue; /* 짙은 남색 */
+    margin-bottom: 0; /* 하단 마진 제거 */
+    margin-top: 10px; /* 상단 마진을 줄임 */
+}
+
+.content .post .bizist-subtitle {
+    font-size: 12px !important; /* BIZIST보다 작게 조정 */
+    font-weight: normal !important; /* 볼드 제거 */
+    color: gray !important; /* 기존 스타일 유지 */
+    margin-top: 0 !important; /* 간격을 붙이기 위해 마진 제거 */
+}
+
+.content .post p {
+    font-size: 20px; /* 글자 크기를 조금 더 키움 */
+    margin-bottom: 20px;
+}
+
+.content .post .highlight {
+    color: red; /* '비즈니스 어시스트'를 빨간색으로 표시 */
+}
+
+.highlight-section {
+    padding: 20px;
+    background-color: #f4f4f4; /* 섹션 배경색 회색으로 설정 */
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px; /* 섹션의 최대 너비를 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+.section-title {
     font-size: 36px;
     margin-bottom: 10px;
 }
 
-.banner-text p {
+.section-subtitle {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    color: gray;
 }
 
-.btn {
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #fff;
-    color: #003366;
-}
-
-/* 설명 섹션 스타일 */
-.description {
-    text-align: center;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 1000px;
-    font-size: 18px;
-    line-height: 1.6;
-    position: relative; /* 로고 위치를 위해 상대 위치 설정 */
+.grid {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* 수직 중앙 정렬 */
-}
-
-.description-logo {
-    position: relative;
-    top: 0;
-    transform: translateY(0);
-    max-width: 300px; /* 로고 최대 너비 */
-    margin-bottom: 20px; /* 로고와 텍스트 사이 간격 */
-}
-
-.description-text {
-    color: #003366; /* 남색 텍스트 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-    max-width: 800px; /* 텍스트 영역 너비 */
-}
-
-.description h2, .description h1 {
-    margin: 10px 0;
-}
-
-.highlight {
-    color: #FF6347; /* 강조 텍스트 색상 */
-}
-
-.about-image {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.about-desktop {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.about-mobile {
-    width: 100%;
-    height: auto;
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .about-desktop {
-        display: none;
-    }
-    .about-mobile {
-        display: block;
-    }
-}
-
-/* 기능 섹션 스타일 */
-.features {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 기본 4개의 항목 */
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1500px; /* 최대 너비 설정 */
-    margin: 0 auto; /* 중앙 정렬을 위해 자동 마진 */
-    box-sizing: border-box;
-}
-
-.feature {
-    position: relative;
-    text-align: center;
-}
-
-.feature img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 51, 0.7); /* 남색 반투명 배경 */
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px; /* 텍스트 주변의 여백 추가 */
-    box-sizing: border-box; /* 패딩을 포함한 박스 크기 설정 */
-}
-
-#feature1 .overlay { background-color: rgba(0, 0, 51, 0.9); } /* 남색 계열 */
-#feature2 .overlay { background-color: rgba(0, 51, 102, 0.9); } /* 남색 계열 */
-#feature3 .overlay { background-color: rgba(0, 102, 153, 0.9); } /* 남색 계열 */
-#feature4 .overlay { background-color: rgba(0, 153, 204, 0.9); } /* 남색 계열 */
-
-.overlay h2 {
-    margin-bottom: 10px;
-    font-size: 28px; /* 글자 크기 증가 */
-}
-
-.overlay p {
-    margin-bottom: 20px;
-    font-size: 20px; /* 글자 크기 증가 */
-    max-width: 80%; /* 텍스트 영역을 좁혀 여백을 추가 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-}
-
-/* 호출 동작 버튼 스타일 */
-.call-to-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto; /* auto로 중앙 정렬 */
-    width: 100%;
-}
-
-.btn-large {
-    background-color: #003366;
-    color: white;
-    padding: 25px; /* 패딩을 늘려서 버튼을 더 크게 만듦 */
-    margin: 10px 0;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 24px; /* 글씨 크기 증가 */
-    width: 100%; /* 버튼 너비를 100%로 설정 */
-    max-width: 800px; /* 최대 너비 설정 */
-    text-align: center;
-    transition: background-color 0.3s;
-}
-
-.btn-large:hover {
-    background-color: #1a3d7c; /* 연한 남색으로 변경 */
-    color: white; /* 글씨 색상 유지 */
-}
-
-/* 회사 소개 섹션 스타일 */
-.about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    padding: 20px;
     flex-wrap: wrap;
-    width: 100%;
-    box-sizing: border-box;
+    gap: 20px;
+    justify-content: space-between; /* 중앙 정렬 */
 }
 
-.about-text {
-    flex: 1;
+.grid .grid-item {
+    background-color: white;
     padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: center;
+    overflow: hidden; /* 호버 시 이미지가 컨테이너를 넘지 않도록 설정 */
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 0 1 calc(45% - 20px); /* 2개씩 배치 */
+    max-width: calc(45% - 20px); /* 최대 너비 설정 */
 }
 
-.about-text h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.about-text p {
-    font-size: 16px;
-}
-
-.about-image {
-    text-align: center;
-}
-
-.about-image img {
+.grid .grid-item img {
     width: 100%;
-    max-width: 1200px;
     height: auto;
-    border-radius: 10px;
+    transition: transform 0.3s;
+    max-width: 100%; /* 이미지 최대 너비 설정 */
 }
 
-/* 프로필 섹션 스타일 */
-.profiles {
-    padding: 30px 20px; /* 패딩을 줄입니다 */
-    margin-bottom: 10px; /* 섹션 간의 간격을 줄입니다 */
+.grid .grid-item:hover {
+    transform: scale(1.03); /* 호버 시 전체 그리드 아이템이 커지는 효과 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 호버 시 그림자 효과 */
+}
+
+footer {
+    background-color: #333;
+    color: white;
     text-align: center;
-    max-width: 1200px; /* 최대 너비 설정 */
-    margin-left: auto;
-    margin-right: auto;
+    padding: 20px;
 }
 
-.profiles h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #003366; /* 남색 텍스트 */
+.infrastructure-section {
+    padding: 40px 20px;
+    background-color: white; /* 섹션 배경색 흰색으로 설정 */
+    text-align: center;
+}
+
+.infrastructure-section .section-title {
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 .profile-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2열 레이아웃 */
-    gap: 20px; /* 간격을 추가합니다 */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* 프로필 아이템 사이의 간격 증가 */
+    justify-content: center;
+}
+
+.profile-grid.single {
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
 .profile-item {
-    display: flex;
-    flex-direction: column; /* 세로 정렬 */
-    align-items: center; /* 중앙 정렬 */
-    background-color: #f9f9f9; /* 배경색 추가 */
-    padding: 20px; /* 패딩 추가 */
-    border-radius: 10px; /* 모서리 둥글게 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 */
+    background-color: #1E3A5F; /* 남색 계열 배경색 */
+    color: white; /* 텍스트 색상 흰색 */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center; /* 중앙 정렬 */
+    max-width: calc(45% - 20px); /* 모든 프로필의 최대 너비 설정 */
+    flex: 1 1 calc(45% - 20px); /* 모든 프로필의 크기 동일하게 설정 */
+    margin-bottom: 20px; /* 프로필 아이템 사이의 간격 추가 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 호버 시 효과 추가 */
 }
 
-.profile-image img {
-    width: 200px; /* 프로필 이미지 너비 */
-    height: 300px; /* 프로필 이미지 높이 */
-    object-fit: cover; /* 이미지의 일부를 잘라서 크기를 맞춤 */
-    border-radius: 10px; /* 이미지 모서리 둥글게 */
+.profile-item:hover {
+    transform: scale(1.03); /* 호버 시 확대 효과 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 호버 시 그림자 효과 */
+}
+
+.profile-item.main-profile {
+    max-width: calc(45% - 20px); /* 다른 프로필 크기로 설정 */
+    flex: 1 1 calc(45% - 20px); /* 모든 프로필의 크기 동일하게 설정 */
+    margin-bottom: 40px; /* 프로필 아이템 사이의 간격 추가 */
+}
+
+.profile-item h3 {
+    margin-top: 10px; /* 이미지와의 간격 추가 */
+}
+
+.profile-item p,
+.profile-item ul {
+    text-align: center; /* 세부 내용 중앙 정렬 */
+}
+
+.profile-item ul {
+    padding-left: 0;
+    list-style: none; /* 리스트 스타일 제거 */
+    text-align: center; /* 리스트 아이템은 중앙 정렬 */
+}
+
+.profile-item ul li {
+    margin-bottom: 10px;
+}
+
+.profile-img {
+    width: 200px; /* 이미지 너비를 더 크게 설정 */
+    height: 300px; /* 이미지 높이를 더 크게 설정 */
+    border-radius: 5px; /* 사각형 이미지 */
+    object-fit: cover; /* 이미지가 사각형으로 잘 맞도록 설정 */
+    margin-bottom: 15px; /* 이미지와 텍스트 사이의 간격 */
+    object-position: top; /* 이미지 상단 부분이 나오도록 설정 */
+}
+
+.about-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    max-width: 1100px;
+}
+
+/* 모바일 버전에서 about_m.png 이미지를 표시 */
+@media (max-width: 768px) {
+    .about-img {
+        content: url('img/about_m.png');
+    }
+}
+
+/* 비지스트 차별화 섹션 */
+.differentiation-section {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.differentiation-section .section-title {
+    font-size: 36px;
     margin-bottom: 20px;
 }
 
-.profile-details {
+.differentiation-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.differentiation-item {
+    background-color: #1E3A5F;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    flex: 1 1 calc(33% - 40px);
+    max-width: calc(33% - 40px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.differentiation-item h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.differentiation-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* 지도 섹션 스타일링 */
+.map {
+    padding: 40px 20px; /* 상하 여백 40px, 좌우 여백 20px */
+    background-color: white; /* 배경색을 흰색으로 설정 */
     text-align: center; /* 텍스트 중앙 정렬 */
 }
 
-.profile-details p {
-    margin: 5px 0;
-    font-weight: bold; /* 볼드 처리 */
-}
-
-.profile-details ul {
-    list-style: none; /* 목록 스타일 제거 */
-    padding: 0; /* 패딩 제거 */
-    margin: 20px 0 0 0; /* 위쪽에 간격 추가 */
-    text-align: left; /* 텍스트 왼쪽 정렬 */
-}
-
-.profile-details ul li {
-    margin-bottom: 5px; /* 목록 항목 간격 추가 */
-}
-
-/* 서비스 섹션 스타일 */
-.services {
-    padding: 40px 20px; /* 패딩을 약간 늘립니다 */
-    margin-bottom: 20px; /* 섹션 간의 간격을 약간 늘립니다 */
-    text-align: center;
-    max-width: 1200px; /* 최대 너비 설정 */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.services h2 {
-    font-size: 32px; /* 제목 크기를 늘립니다 */
-    margin-bottom: 40px; /* 제목과 그리드 사이의 간격을 늘립니다 */
-    color: #003366; /* 남색 텍스트 */
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3개씩 배치 */
-    gap: 20px; /* 아이템 간의 간격을 늘립니다 */
-    justify-items: center;
-}
-
-.service-item {
-    color: #fff; /* 흰색 텍스트 */
-    font-weight: 700; /* 글씨 굵게 */
-    padding: 20px; /* 패딩을 약간 늘립니다 */
-    width: 100%;
-    max-width: 500px; /* 최대 너비 설정 */
-    text-align: center;
-    box-sizing: border-box;
-    background-color: #003366; /* 남색 배경 */
-    margin: 5px auto; /* 아이템 간 간격 */
-    border-radius: 10px; /* 약간 둥근 모서리 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 변형 및 그림자 효과 추가 */
-}
-
-.service-item:hover {
-    transform: translateY(-5px); /* 마우스 오버 시 약간 위로 올라가는 효과 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 마우스 오버 시 그림자 효과 증가 */
-}
-
-/* 지도 섹션 스타일 */
-.map {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 20px;
-    background-color: #fff;
-    max-width: 1200px; /* 최대 너비 설정 */
-    margin-left: auto;
-    margin-right: auto;
+.map-content {
+    display: flex; /* 지도와 표를 한 줄로 배치 */
+    justify-content: space-between; /* 중앙 정렬 */
+    align-items: flex-start; /* 상단 정렬 */
+    gap: 20px; /* 요소 간의 간격 설정 */
+    flex-wrap: wrap; /* 모바일에서 요소가 줄 바꿈 되도록 설정 */
 }
 
 .map-container {
     flex: 1;
-    min-width: 300px;
-    max-width: 600px; /* 최대 너비 설정 */
+    min-width: 300px; /* 최소 너비 설정 */
 }
 
 .map-info {
+    background-color: white; /* 지도 정보 배경색을 흰색으로 설정 */
+    padding: 20px;
+    border-radius: 5px; /* 모서리를 둥글게 설정 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 그림자 추가 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
     flex: 1;
-    min-width: 300px;
-    padding-left: 20px; /* 좌측 패딩 */
-    text-align: center;
-    box-sizing: border-box; /* 패딩 포함 박스 크기 설정 */
-}
-
-.map-info h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.map-info p {
-    font-size: 16px;
+    min-width: 300px; /* 최소 너비 설정 */
 }
 
 .map-info table {
-    width: 100%;
-    margin-top: 10px;
-    border-collapse: collapse;
-}
-
-.map-info table, .map-info th, .map-info td {
-    border: 1px solid #ddd;
+    width: 100%; /* 테이블 너비를 100%로 설정 */
+    border-collapse: collapse; /* 테이블 셀 간의 경계 없애기 */
 }
 
 .map-info th, .map-info td {
-    padding: 10px;
-    text-align: center;
+    padding: 10px; /* 셀의 패딩 설정 */
+    border-bottom: 1px solid #ddd; /* 셀 하단 경계선 설정 */
+}
+
+.map-info th {
+    text-align: left; /* 헤더 셀 텍스트 왼쪽 정렬 */
+    font-weight: bold; /* 헤더 셀 텍스트 볼드 설정 */
+}
+
+.map-info a {
+    color: #007BFF; /* 링크 색상을 블루로 설정 */
+    text-decoration: none; /* 링크의 기본 밑줄 제거 */
+}
+
+.map-info a:hover {
+    text-decoration: underline; /* 링크 호버 시 밑줄 추가 */
 }
 
 .map-buttons {
-    text-align: center;
-    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* 버튼들을 중앙에 정렬 */
+    margin-top: 20px; /* 버튼과 정보 사이의 여백 설정 */
 }
 
 .map-buttons a {
     display: inline-block;
-    padding: 10px 20px;
-    margin: 0 10px;
-    text-decoration: none;
-    background-color: #003366; /* 남색 버튼 */
-    color: white;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    margin: 0 10px; /* 버튼 사이의 여백 설정 */
+    padding: 10px 20px; /* 버튼 패딩 설정 */
+    border-radius: 5px; /* 버튼 모서리 둥글게 설정 */
+    text-decoration: none; /* 버튼의 밑줄 제거 */
+    font-size: 16px; /* 버튼 폰트 크기 설정 */
+    color: white; /* 버튼 텍스트 색상 흰색으로 설정 */
 }
 
 .map-buttons a:hover {
-    background-color: #002244;
+    text-decoration: none; /* 호버 시 밑줄 제거 */
 }
 
-.map-buttons a.naver-map {
-    background-color: #2DB400; /* 네이버 지도 초록색 */
-    color: white;
+.naver-map {
+    background-color: #1cb30e; /* 연한 연두색 초록색 */
 }
 
-.map-buttons a.kakao-map {
-    background-color: #FEE500; /* 카카오 지도 노란색 */
-    color: black;
+.kakao-map {
+    background-color: #ffd000; /* 노란색 */
 }
 
-/* 강조 텍스트 색상 변경 */
-.highlight {
-    color: #FF6347; /* 원하는 색상 코드로 변경 */
+.map-buttons a:hover {
+    background-color: #0056b3; /* 버튼 호버 시 배경색 변경 */
 }
 
-/* 푸터 스타일 */
-footer {
-    background-color: #003366; /* 남색 배경 */
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* 반응형 스타일 */
-@media (max-width: 1200px) {
-    .features {
-        grid-template-columns: repeat(2, 1fr); /* 작은 화면에서는 두 줄로 표시 */
-    }
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-    .features {
-        grid-template-columns: 1fr; /* 작은 화면에서는 한 줄에 한 개의 항목 표시 */
-    }
-    .profile-grid, .service-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .header-banner {
-        flex-direction: row; /* row 유지 */
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
-    }
-
-    .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #fff;
-        position: fixed; /* absolute 대신 fixed 사용 */
-        top: 80px;
-        left: 0;
-        text-align: center; /* 중앙 정렬 */
-        z-index: 1000; /* 메뉴가 다른 요소 위에 표시되도록 설정 */
-        transition: max-height 0.3s ease-out; /* 메뉴 애니메이션 */
-        max-height: 0; /* 초기 높이 설정 */
-        overflow: hidden;
-    }
-
-    .menu.active {
-        display: flex;
-        max-height: 500px; /* 메뉴 활성화 시 높이 설정 */
-    }
-
-    .menu li {
-        display: block;
-        margin: 0;
-    }
-
-    .menu li a {
+    .header, .main-banner, .content, .highlight-section, .footer {
         padding: 10px;
-        display: block;
-        font-weight: 700; /* 글꼴 굵기 설정 */
     }
 
-    .hamburger-menu {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
+    .banner-text h1 {
+        font-size: 32px;
     }
 
-    .main-banner {
-        height: auto;
+    .banner-text p {
+        font-size: 18px;
     }
 
-    .main-banner img {
-        height: auto;
+    .section-title {
+        font-size: 28px;
     }
 
-    .banner-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        border-radius: 10px;
-        color: #fff;
+    .section-subtitle {
+        font-size: 16px;
     }
 
-    .about {
-        flex-direction: column;
+    .grid {
+        flex-direction: column; /* 모바일 화면에서는 1개씩 세로로 배치 */
     }
 
-    .about-image img {
-        content: url('img/about_m.png');
+    .grid .grid-item {
+        max-width: 100%; /* 모바일에서 너비를 100%로 설정 */
     }
 
-    .map {
-        flex-direction: column;
-        text-align: center;
+    .profile-grid {
+        flex-direction: column; /* 모바일 화면에서는 1개씩 세로로 배치 */
     }
 
-    .map-container,
+    .profile-item {
+        max-width: 100%; /* 모바일에서 너비를 100%로 설정 */
+    }
+
+    .profile-item.main-profile {
+        max-width: 100%; /* 모바일에서 너비를 100%로 설정 */
+    }
+
+    .differentiation-grid {
+        flex-direction: column; /* 모바일 화면에서는 1개씩 세로로 배치 */
+    }
+
+    .differentiation-item {
+        max-width: 100%; /* 모바일에서 너비를 100%로 설정 */
+    }
+
+    .map-content {
+        flex-direction: column; /* 모바일 화면에서는 세로로 배치 */
+    }
+
+    .map-container {
+        margin-bottom: 10px; /* 모바일 화면에서 지도와 정보 사이의 여백 줄이기 */
+    }
+
     .map-info {
-        width: 100%;
+        padding: 15px; /* 모바일 화면에서 정보 패딩 줄이기 */
+    }
+
+    .map-buttons a {
+        font-size: 14px; /* 모바일 화면에서 버튼 폰트 크기 줄이기 */
+        padding: 8px 15px; /* 모바일 화면에서 버튼 패딩 줄이기 */
     }
 }
