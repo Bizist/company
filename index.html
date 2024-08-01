@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈페이지 - 메인페이지</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="로고" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">메인페이지</a></li>
+                <li><a href="policy-fund.html">정책자금/정부지원금</a></li>
+                <li><a href="pt-consulting.html">PT 컨설팅 / 경영 컨설팅</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="banner-content">
+            <h1>비지스트</h1>
+            <p>기업의 성장과 위험요소 진단을 한번에, 비지스트</p>
+            <a href="#apply" class="apply-button">지금 신청하기</a>
+        </div>
+    </section>
+    <main>
+        <section id="policy-fund">
+            <img src="body/1.header.png" alt="정책자금/정부지원금 이미지" class="fade-in">
+        </section>
+        <section id="pt-consulting">
+            <img src="body/2.title.png" alt="PT 컨설팅 이미지" class="fade-in">
+        </section>
+        <section id="management-consulting">
+            <img src="body/3.Rest.png" alt="경영 컨설팅 이미지" class="fade-in">
+        </section>
+        <section id="about">
+            <picture>
+                <source media="(max-width: 768px)" srcset="body/7-2.about_m.png">
+                <img src="body/7.about.png" alt="About 이미지" class="fade-in">
+            </picture>
+        </section>
+        <section id="differences">
+            <img src="body/5.Differences.png" alt="Differences 이미지" class="fade-in">
+        </section>
+        <section id="expert-support">
+            <img src="body/6.infrastructure.png" alt="Infrastructure 이미지" class="fade-in">
+            <div class="profiles">
+                <div class="profile-nav prev" onclick="moveSlide(-1)">&lt;</div>
+                <div class="profile-container">
+                    <div class="profile">
+                        <img src="img/a.png" alt="김병선 프로필">
+                        <p><strong>김병선 대표</strong></p>
+                        <p>경영컨설팅, ㈜비지스트컴퍼니</p>
+                        <p>- 현 ㈜비지스트컴퍼니 대표</p>
+                        <p>- 대기업 대졸 공채 영업관리 5년</p>
+                        <p>- 세금&재무 컨설턴트 4년</p>
+                        <p>- 정책자금 및 경영컨설턴트 3년</p>
+                    </div>
+                    <div class="profile">
+                        <img src="img/b.png" alt="유병도 프로필">
+                        <p><strong>유병도 대표</strong></p>
+                        <p>마케팅, 파파컴퍼니</p>
+                        <p>- 現 파파컴퍼니 대표</p>
+                        <p>- SNS종합마케팅 전문</p>
+                        <p>- 마케팅 기획 경력 7년</p>
+                        <p>- 마케팅 누적 고객 8천명 보유</p>
+                    </div>
+                    <div class="profile">
+                        <img src="img/c.png" alt="이민규 프로필">
+                        <p><strong>이민규 변호사</strong></p>
+                        <p>- 現 법무법인 한수 대표 변호사 (2022~)</p>
+                        <p>- 대한변호사협회 부동산, 도산 전문분야 등록</p>
+                        <p>- 한국M&A컨설팅협회 부회장</p>
+                        <p>- 2009. 제51회 사법시험 합격</p>
+                    </div>
+                    <div class="profile">
+                        <img src="img/d.png" alt="김소연 프로필">
+                        <p><strong>김소연 대표</strong></p>
+                        <p>마케팅, 셀링스트림 대표</p>
+                        <p>- 現 셀링스트림 대표</p>
+                        <p>- Ampm글로벌, 트리플하이엠 종합광고대행사 AE</p>
+                        <p>- IT 회사, F&B 브랜드 인하우스 마케터</p>
+                        <p>- 온라인채널 기획전 대행사 마케팅 팀장</p>
+                        <p>- 웨딩, 이커머스 업종 마케팅/광고 담당</p>
+                    </div>
+                    <div class="profile">
+                        <img src="img/e.png" alt="R&D 연구개발 자금 전문 업체 프로필">
+                        <p><strong>R&D 연구개발 자금 전문 업체</strong></p>
+                        <p>- 기술보증기금 엔젤파트너스</p>
+                        <p>- 중소기업진흥공단 등록 상담업체</p>
+                        <p>- R&D 연간 계약 대비 선정율 ~~%</p>
+                        <p>- 직원 8명, 8년 누적 900여개 업체 진행</p>
+                    </div>
+                    <div class="profile">
+                        <img src="img/f.png" alt="강홍구 프로필">
+                        <p><strong>강홍구 세무사</strong></p>
+                        <p>세무사, 세무회계청율</p>
+                        <p>- 現 세무회계청율 대표세무사</p>
+                        <p>- 現 종로세무서 **위원</p>
+                        <p>- 現 서울동부지방법원 세무상담</p>
+                        <p>- 서울특별시장 표창(2022)</p>
+                        <p>- 한국경제신문 기고</p>
+                    </div>
+                    <div class="profile">
+                        <img src="img/g.png" alt="강홍구 프로필">
+                        <p><strong>강홍구 세무사</strong></p>
+                        <p>세무사, 세무회계청율</p>
+                        <p>- 現 세무회계청율 대표세무사</p>
+                        <p>- 現 종로세무서 **위원</p>
+                        <p>- 現 서울동부지방법원 세무상담</p>
+                        <p>- 서울특별시장 표창(2022)</p>
+                        <p>- 한국경제신문 기고</p>
+                    </div>
+                </div>
+                <div class="profile-nav next" onclick="moveSlide(1)">&gt;</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024. BIZIST 모든 권리 보유</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
